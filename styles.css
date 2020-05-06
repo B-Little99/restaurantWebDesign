@@ -1,10 +1,12 @@
 * {
     font-family: 'Asap', sans-serif;
+    box-sizing: border-box;
 }
 
-body{
+html, body, #main {
     margin: 0;
     padding: 0;
+    max-width: 100%;
     overflow-x: hidden;
 }
 
@@ -29,6 +31,7 @@ header{
     margin: 0;
     padding: 0;
     height: 50px;
+    padding-bottom: 25px;
 }
 
 ul{
@@ -60,7 +63,7 @@ li .navLink:hover {
 #menuCarousel{
     /* width: 100vw;
     height: 700px; */
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -169,6 +172,81 @@ li .navLink:hover {
 }
 
 .carouselLink:hover {
-    background-color: rgba(126, 13, 13, 0.61);
-    transition: ;
+    background-color: rgba(255, 113, 113, 0.5);
+    transition: ease-in;
+    transition-duration: .3s;
 } 
+
+h3 {
+    font-size: 35px;
+    font-weight: bold;
+    text-decoration: underline;
+    color: rgb(155, 15, 15);
+}
+
+p {
+    font-size: 20px;
+}
+
+#mainSection{
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    width: 100vw;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    margin-top: 60px;
+    border-top: 2px solid rgb(155, 15, 15);
+}
+
+#aboutUs {
+    width: 40%;
+    height: auto;
+    background-color: rgb(206, 205, 205);
+    padding: 30px 50px;
+    margin-right: 10px;
+}
+
+#openingTimes {
+    width: 50%;
+    height: 419px;
+    padding: 30px;
+    padding-left: 150px;
+}
+
+#mapText {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(155, 15, 15);
+    height: 100%;
+    color: white;
+}
+
+#mapText p {
+    margin: 0;
+    padding: 15px;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 35px;
+}
+
+#map{
+    overflow:hidden;
+    padding-bottom:50%;
+    position:relative;
+    height:0;
+}
+#map iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+footer {
+    background-color: rgb(155, 15, 15);
+    height: 150px;
+    width: 100%;
+}
