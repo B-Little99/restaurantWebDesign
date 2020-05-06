@@ -1,0 +1,18 @@
+* {
+    font-family: 'Asap', sans-serif;
+}
+
+body{
+    margin: 0;
+}
+
+
+header{
+    font-size: 2em;
+    color: white;
+    background-color: rgb(155, 15, 15);
+    height: 200px;
+    width: 100vw;
+    text-align: center;
+    line-height: 200px;
+}
