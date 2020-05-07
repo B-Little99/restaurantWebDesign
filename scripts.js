@@ -1,9 +1,9 @@
 //Here is the different carousel slide sections for individual languages
 let pancakes = document.getElementById("pancakes");
-let wrap = document.getElementById("wrap");
+let roast = document.getElementById("roast");
 let burger = document.getElementById("burger");
 let brownie = document.getElementById("brownie");
-let carouselItems = [pancakes, wrap, burger];
+let carouselItems = [pancakes, roast, burger, brownie];
 
 //Here are the circle numbers
 let circle1 = document.getElementById("circle1");
@@ -22,10 +22,10 @@ function circleEventL() {
         circles[i].addEventListener("click", function changeCarousel(ev){
             let currentSlide = document.querySelector(".currentCarouselImage");
             let targetCircle = ev.target;
-            let currentCircle = document.querySelector(".currentImageCircle"); 
+            let currentCircle = document.querySelector(".currentCircle"); 
             currentSlide.classList.remove("currentCarouselImage");
-            currentCircle.classList.remove("currentImageCircle");
-            targetCircle.classList.add("currentImageCircle");
+            currentCircle.classList.remove("currentCircle");
+            targetCircle.classList.add("currentCircle");
 
             let targetCircleId = targetCircle.id
 
@@ -35,7 +35,7 @@ function circleEventL() {
                     pancakes.classList.add("currentCarouselImage");
                     break;
                 case "circle2":
-                    wrap.classList.add("currentCarouselImage");;
+                    roast.classList.add("currentCarouselImage");;
                     break;
                 case "circle3":
                     burger.classList.add("currentCarouselImage");;
@@ -48,3 +48,36 @@ function circleEventL() {
     }
 }
 
+function moveCarousel(){
+    let currentSlide = document.querySelector(".currentCarouselImage");
+    let nextSlide = currentSlide.nextElementSibling;
+
+    currentSlide.classList.remove("currentCarouselImage");
+
+    //Once all elements are displayed there is no nextElementSibling to grab so this re-assigns the next slide so it does not result in an error.
+    if (nextSlide === null) { 
+        nextSlide = carouselItems[0];
+        nextSlide.classList.add("currentCarouselImage");
+    } else {
+        nextSlide.classList.add("currentCarouselImage");
+    }
+
+    //The below is the code to move the circles with the slides
+    let currentCircle = document.querySelector(".currentCircle"); 
+    let nextCircle = currentCircle.nextElementSibling;
+
+    currentCircle.classList.remove("currentCircle");
+
+    if (nextCircle === null) {
+        nextCircle = document.querySelector(".carouselNav").firstElementChild;
+        nextCircle.classList.add("currentCircle");
+    } else {
+        nextCircle.classList.add("currentCircle");
+    }
+}
+
+function start(){
+    setInterval(moveCarousel, 3000);
+}
+
+start();
